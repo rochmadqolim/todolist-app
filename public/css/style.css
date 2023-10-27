@@ -1,0 +1,16 @@
+body {
+    background-color: #e3fcbf;
+}
+
+.card:hover {
+    cursor: pointer;
+    background-color: #b8f1b0;
+}
+
+.done {
+    background-color: #00ffab;
+}
+
+.icon:hover {
+    background-color: #b8f1b0;
+}

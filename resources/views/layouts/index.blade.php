@@ -14,9 +14,9 @@
                                 @csrf
                                 <button type="submit" class="btn btn-light fst-italic fs-5" style="background-color: #4BA3C9;" id="{{ $item->id }}">
                                     @if($item->status == 0)
-                                        <i class="bi bi-square" style="color: white;"> Checklist</i>
+                                        <i class="bi bi-square" style="color: white;"> Check</i>
                                     @else
-                                        <i class="bi bi-check2-square" style="color: black;"> Checklist</i>
+                                        <i class="bi bi-check2-square" style="color: black;"> Uncheck</i>
                                     @endif
                                 </button>
                             </form>

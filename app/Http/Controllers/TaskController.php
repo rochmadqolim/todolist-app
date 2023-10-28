@@ -44,7 +44,11 @@ class TaskController extends Controller
         $task->status = $task->status == 1 ? 0 : 1;
         $task->save();
 
-        Session::flash('message', 'Task Checked');
+        if ($task->status == 1) {
+            Session::flash('message', 'Task Checked');
+        } else {
+            Session::flash('message', 'Task Unchecked');
+        }
         Session::flash('alert-class', 'alert-primary');
         return redirect('todoApp');
     }

@@ -44,7 +44,7 @@ class TaskController extends Controller
         $task->status = $task->status == 1 ? 0 : 1;
         $task->save();
 
-        Session::flash('message', 'Task Satatus Updated');
+        Session::flash('message', 'Satatus Updated');
         Session::flash('alert-class', 'alert-primary');
         return redirect('todoApp');
     }
@@ -55,7 +55,7 @@ class TaskController extends Controller
         $task->update($request->all());
     
         Session::flash('message', 'Task Updated');
-        Session::flash('alert-class', 'alert-secondary');
+        Session::flash('alert-class', 'alert-dark');
         return redirect('todoApp');
     }
 

@@ -60,4 +60,5 @@ php artisan serve
 Then open http://localhost:8000/todoApp from the browser and the application can be used.
 
 The first display of the application if the installation is successful.
+
 ![alt text](https://github.com/rochmadqolim/todolist-app/blob/main/public/todoApp.jpg?raw=true)

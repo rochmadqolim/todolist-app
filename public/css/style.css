@@ -1,7 +1,3 @@
-body {
-    background-color: #e3fcbf;
-}
-
 .card:hover {
     cursor: pointer;
     background-color: #b8f1b0;
@@ -11,6 +7,9 @@ body {
     background-color: #00ffab;
 }
 
-.icon:hover {
-    background-color: #b8f1b0;
+.completed {
+    color: white;
+    text-decoration: line-through;
+    text-decoration-color: black;
+    text-decoration-thickness: 2px;
 }

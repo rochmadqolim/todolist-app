@@ -33,16 +33,16 @@ class TaskController extends Controller
         return redirect('index');
     }
 
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id){
+        
         $task = Task::find($id);
         $task->update($request->all());
     
         return redirect('index');
     }
 
-    public function destroy($id)
-    {
+    public function destroy($id){
+        
         $task = Task::find($id);
     
         if (!$task) {

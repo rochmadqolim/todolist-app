@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
-<body>
+<body style="background-color: #e3fcbf;">
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm" style="background-color: #14c38e">
         <div class="container fluid">
-          <a class="navbar-brand" href="#">TodoApp</a>
+          <a class="navbar-brand fw-bold fst-italic" href="{{ 'index' }}" style="font-size: 2.2rem; color:black;">TodoApp</a>
         </div>
     </nav>
 
@@ -21,8 +21,9 @@
 
     <div class="container my-4" style="position: relative; padding-top: 70px;">
         @include('layouts.index')
-        <div class="position-sticky text-end" style="position: absolute; bottom: 10px; right: 10px;">
-            <button class="btn btn-success btn-lg" type="button" data-bs-toggle="modal" data-bs-target="#create"><i class="bi bi-bookmark-check"> Create Task</i></button>
+        <div class="position-sticky text-center" style="position: absolute; bottom: 10px;">
+            <button class="btn btn-success btn-block w-25 fw-bold" type="button" data-bs-toggle="modal" data-bs-target="#create" style="--bs-btn-font-size: 1.5rem; background-color: #14c38e; color: #333;">
+                <i class="bi bi-bookmark-check"> Create Task</i></button>
         </div>
     </div>
         

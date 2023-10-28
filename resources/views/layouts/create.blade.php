@@ -6,7 +6,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="create" method="POST">
+                <form action="store" method="POST">
                     @csrf 
                     <div class="mb-3">
                         <label for="title" class="form-label">Title</label>
@@ -25,3 +25,4 @@
         </div>
     </div>
 </div>
+

@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('todoApp', [TaskController::class, 'index']);
-Route::post('create', [TaskController::class, 'create']);
+Route::post('store', [TaskController::class, 'store']);
 Route::post('status/{id}', [TaskController::class, 'status']);
 Route::put('update/{id}', [TaskController::class, 'update']);
 Route::delete('destroy/{id}', [TaskController::class, 'destroy']);

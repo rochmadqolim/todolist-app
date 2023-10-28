@@ -21,7 +21,7 @@
 
     <div class="container my-4" style="position: relative; padding-top: 70px;">
         @include('layouts.index')
-        <div class="position-sticky text-center" style="position: absolute; bottom: 10px;">
+        <div class="position-sticky text-center pt-3" style="bottom: 20px;">
             <button class="btn btn-success btn-block w-25 fw-bold" type="button" data-bs-toggle="modal" data-bs-target="#create" style="--bs-btn-font-size: 1.5rem; background-color: #14c38e; color: #333;">
                 <i class="bi bi-bookmark-check"> Create Task</i></button>
         </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Task;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TaskController extends Controller
 {
@@ -12,16 +13,24 @@ class TaskController extends Controller
         return view('layouts.main', ['tasks' => $tasks]);
     }
 
-    public function create(Request $request){
-        
-        $request->validate([
-            'title' => 'required',
-            'description' => 'required',
-        ]);
-
-        Task::create($request->all());
-        return redirect('index');
+    public function store(Request $request)
+    {
+        DB::beginTransaction();
     
+        try {
+            $task = new Task();
+            $task->title = $request->input('title');
+            $task->description = $request->input('description');
+            $task->save();
+    
+            DB::commit();
+    
+            return redirect('todoApp');
+        } catch (\Exception $e) {
+            DB::rollback();
+    
+            return redirect('todoApp');
+        }
     }
 
     public function status($id){
@@ -30,7 +39,7 @@ class TaskController extends Controller
         $task->status = $task->status == 1 ? 0 : 1;
         $task->save();
 
-        return redirect('index');
+        return redirect('todoApp');
     }
 
     public function update(Request $request, $id){
@@ -38,7 +47,7 @@ class TaskController extends Controller
         $task = Task::find($id);
         $task->update($request->all());
     
-        return redirect('index');
+        return redirect('todoApp');
     }
 
     public function destroy($id){
@@ -46,11 +55,11 @@ class TaskController extends Controller
         $task = Task::find($id);
     
         if (!$task) {
-            return redirect('index');
+            return redirect('todoApp');
         }
     
         $task->delete();
     
-        return redirect('index');
+        return redirect('todoApp');
     }    
 }

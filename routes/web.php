@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('index', [TaskController::class, 'index']);
+Route::get('todoApp', [TaskController::class, 'index']);
 Route::post('create', [TaskController::class, 'create']);
 Route::post('status/{id}', [TaskController::class, 'status']);
 Route::put('update/{id}', [TaskController::class, 'update']);

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Task;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class TaskController extends Controller
 {
@@ -25,10 +26,14 @@ class TaskController extends Controller
     
             DB::commit();
     
+            Session::flash('message', 'Task Created');
+            Session::flash('alert-class', 'alert-success');
             return redirect('todoApp');
         } catch (\Exception $e) {
             DB::rollback();
     
+            Session::flash('message', 'Task Not Created');
+            Session::flash('alert-class', 'alert-danger');
             return redirect('todoApp');
         }
     }
@@ -39,6 +44,8 @@ class TaskController extends Controller
         $task->status = $task->status == 1 ? 0 : 1;
         $task->save();
 
+        Session::flash('message', 'Task Satatus Updated');
+        Session::flash('alert-class', 'alert-primary');
         return redirect('todoApp');
     }
 
@@ -47,6 +54,8 @@ class TaskController extends Controller
         $task = Task::find($id);
         $task->update($request->all());
     
+        Session::flash('message', 'Task Updated');
+        Session::flash('alert-class', 'alert-secondary');
         return redirect('todoApp');
     }
 
@@ -60,6 +69,8 @@ class TaskController extends Controller
     
         $task->delete();
     
+        Session::flash('message', 'Task Deleted');
+        Session::flash('alert-class', 'alert-danger');
         return redirect('todoApp');
     }    
 }

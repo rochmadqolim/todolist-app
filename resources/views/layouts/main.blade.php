@@ -20,8 +20,18 @@
     @includeIf('layouts.detail')
 
     <div class="container my-4" style="position: relative; padding-top: 70px;">
+        <div class="text-center">
+            @if (session('message'))
+            <div class="alert {{ session('alert-class') }} alert-dismissible" style="display: inline-block; width: 100%;">
+                <div class="d-flex justify-content-between fst-italic fs-5 text-body">
+                    <div>{{ session('message') }}</div>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+            @endif
+        </div>
         @include('layouts.index')
-        <div class="position-sticky text-center pt-3" style="bottom: 20px;">
+        <div class="position-sticky text-center pt-3 mt-5" style="bottom: 50px;">
             <button class="btn btn-success btn-block w-25 fw-bold" type="button" data-bs-toggle="modal" data-bs-target="#create" style="--bs-btn-font-size: 1.5rem; background-color: #14c38e; color: #333;">
                 <i class="bi bi-bookmark-check"> Create Task</i></button>
         </div>

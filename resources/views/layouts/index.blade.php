@@ -1,4 +1,4 @@
-<ul class="list-group">
+<ul class="list-group mb-5">
     @foreach ($tasks as $item)
     <li class="list-group-item card mb-3 @if ($item->status === "1") bg-dark text-white completed @endif">
         <div class="card-body">
@@ -12,7 +12,7 @@
                         <div class="mb-2">
                             <form action="status/{{ $item->id }}" method="POST">
                                 @csrf
-                                <button type="submit" class="btn btn-light fst-italic" style="background-color: #4BA3C9;" id="{{ $item->id }}">
+                                <button type="submit" class="btn btn-light fst-italic fs-5" style="background-color: #4BA3C9;" id="{{ $item->id }}">
                                     @if($item->status == 0)
                                         <i class="bi bi-square" style="color: white;"> Checklist</i>
                                     @else
@@ -22,7 +22,7 @@
                             </form>
                         </div>
                         <div class="mb-2">
-                            <button type="button" data-bs-toggle="modal" data-bs-target="#detail{{ $item->id }}" class="fst-italic btn btn-light" style="background-color: #D3D3D3; color: black;">
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#detail{{ $item->id }}" class="fst-italic btn btn-light fs-5" style="background-color: #D3D3D3; color: black;">
                                 <i class="bi bi-pencil-square"></i> Update
                             </button>
                         </div>
@@ -34,7 +34,7 @@
             <form method="POST" action="destroy/{{ $item->id }}">
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="btn btn-light fst-italic" style="background-color: #FF6B6B; color: black;" id="{{ $item->id }}">
+                <button type="submit" class="btn btn-light fst-italic fs-5" style="background-color: #FF6B6B; color: black;" id="{{ $item->id }}">
                     <i class="bi bi-x-square"></i> Delete
                 </button>
             </form>

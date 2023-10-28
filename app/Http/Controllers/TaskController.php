@@ -44,7 +44,7 @@ class TaskController extends Controller
         $task->status = $task->status == 1 ? 0 : 1;
         $task->save();
 
-        Session::flash('message', 'Satatus Updated');
+        Session::flash('message', 'Task Checked');
         Session::flash('alert-class', 'alert-primary');
         return redirect('todoApp');
     }

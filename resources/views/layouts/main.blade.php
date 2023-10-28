@@ -19,12 +19,12 @@
     @includeIf('layouts.create')
     @includeIf('layouts.detail')
 
-        <div class="container my-4 max-w-600" style="position: relative; padding-top: 70px;">
-            @include('layouts.index')
-            <div class="position-sticky text-end" style="position: absolute; bottom: 10px; right: 10px;">
-                <button class="btn btn-success btn-lg" type="button" data-bs-toggle="modal" data-bs-target="#create"><i class="bi bi-bookmark-check"> Create Task</i></button>
-            </div>
+    <div class="container my-4" style="position: relative; padding-top: 70px;">
+        @include('layouts.index')
+        <div class="position-sticky text-end" style="position: absolute; bottom: 10px; right: 10px;">
+            <button class="btn btn-success btn-lg" type="button" data-bs-toggle="modal" data-bs-target="#create"><i class="bi bi-bookmark-check"> Create Task</i></button>
         </div>
+    </div>
         
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

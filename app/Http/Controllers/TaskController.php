@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class TaskController extends Controller
 {
     public function index(){
-        $tasks = Task::all();
+        $tasks = Task::orderBy('status', 'asc')->orderBy('id', 'desc')->get();
         return view('layouts.main', ['tasks' => $tasks]);
     }
 

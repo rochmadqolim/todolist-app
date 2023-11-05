@@ -4,12 +4,13 @@ To do list application built using the Laravel framework and MySQL database.
 
 ## Application features
 
--   Can be used without registering or logging
--   Can create and add new tasks
--   Can checked the tasks that have been done
+-   User can be used without registering or logging
+-   User can create and add new tasks
+-   User can checked the tasks that have been done
 -   Completed tasks can be distinguished visually
 -   Tasks are sorted from most recently created
 -   Existing tasks can be updated or deleted
+-   Users should be able to changing the order of the task list
 
 ## Installation
 

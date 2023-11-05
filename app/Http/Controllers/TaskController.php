@@ -9,8 +9,9 @@ use Illuminate\Support\Facades\Session;
 
 class TaskController extends Controller
 {
+
     public function index(){
-        $tasks = Task::orderBy('status', 'asc')->orderBy('id', 'desc')->get();
+        $tasks = Task::all();
         return view('layouts.main', ['tasks' => $tasks]);
     }
 
@@ -20,6 +21,7 @@ class TaskController extends Controller
     
         try {
             $task = new Task();
+            $task->position = Task::count() + 1;
             $task->title = $request->input('title');
             $task->description = $request->input('description');
             $task->save();
